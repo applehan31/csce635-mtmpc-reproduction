@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.ipynb_checkpoints/
