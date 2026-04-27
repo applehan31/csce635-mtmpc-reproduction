@@ -37,10 +37,11 @@ Usage:
 #   The QP objective then drives v_z -> v_nom_z (no CBF interference).
 # - alpha tuning: too high => early intervention but aggressive swerving;
 #   too low => late avoidance, may violate h_i >= 0.
-# Note on HO-CBF: professor recommended it for acceleration-level control.
-#   Here we use 1st-order velocity CBF: the DSL-PID inner loop tracks
-#   the commanded velocity well enough that velocity-space CBF is sufficient.
-#   For direct thrust control you would need HO-CBF (relative degree 2).
+# Note on HO-CBF: HO-CBF (relative degree 2) was suggested for
+#   acceleration-level control. The implementation here uses a 1st-order
+#   velocity CBF: the DSL-PID inner loop tracks the commanded velocity well
+#   enough that velocity-space CBF is sufficient. Direct thrust control would
+#   require HO-CBF.
 # QP feasibility: always feasible when h_i(pos) > 0 for all i (proved by
 #   choosing v = 0, which trivially satisfies A_i @ 0 = 0 >= -alpha * h_i
 #   when h_i >= 0). Infeasibility only occurs if drone enters the unsafe set.

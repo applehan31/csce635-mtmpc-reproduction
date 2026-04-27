@@ -2,12 +2,18 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-*.so
-.DS_Store
 *.swp
 *.swo
 *~
+.Python
+.DS_Store
 .vscode/
 .idea/
 .ipynb_checkpoints/
+*.egg-info/
+
+# Submission-specific exclusions
+*.mp4
+results/videos/
+results/fair_comparison_master_contaminated_*.csv
+results/fair_comparison_master_pre_carrot_clip.csv
