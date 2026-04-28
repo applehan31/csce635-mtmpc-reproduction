@@ -1,0 +1,27 @@
+Scenario B — static vs dynamic obstacle (single moving cylinder)
+----------------------------------------------------------------
+Controller  Static-full (24 trials)       Static @ v=1.0, la=0.40 (3)       Dynamic (3 trials)      ΔSafe (full→dyn)  
+APF         S=10 T= 8 C= 6  safe= 75.0%   S=1 T=1 C=1    safe= 66.7%      S=3 T=0 C=0   safe=100.0%    +25.0%
+CBF-QP      S= 0 T=10 C=14  safe= 41.7%   S=0 T=0 C=3    safe=  0.0%      S=0 T=0 C=3   safe=  0.0%    -41.7%
+mt-MPC      S=11 T= 8 C= 5  safe= 79.2%   S=3 T=0 C=0    safe=100.0%      S=3 T=0 C=0   safe=100.0%    +20.8%
+
+
+Per-trial dynamic outcomes:
+----------------------------------------
+  APF      trial 0  SUCCESS    steps= 508  clear=0.161 m  speed=0.875 m/s
+  APF      trial 1  SUCCESS    steps= 513  clear=0.142 m  speed=0.880 m/s
+  APF      trial 2  SUCCESS    steps= 511  clear=0.159 m  speed=0.870 m/s
+
+  CBF-QP   trial 0  COLLISION  steps= 443  clear=0.049 m  speed=0.739 m/s
+  CBF-QP   trial 1  COLLISION  steps= 238  clear=0.047 m  speed=0.819 m/s
+  CBF-QP   trial 2  COLLISION  steps= 287  clear=0.049 m  speed=0.751 m/s
+
+  mt-MPC   trial 0  SUCCESS    steps= 531  clear=0.060 m  speed=0.588 m/s
+  mt-MPC   trial 1  SUCCESS    steps= 545  clear=0.061 m  speed=0.569 m/s
+  mt-MPC   trial 2  SUCCESS    steps= 500  clear=0.061 m  speed=0.608 m/s
+
+
+Headline:
+  APF      dynamic safe-rate 100.0% (static full 75.0% — static recommended cell 66.7%)
+  CBF-QP   dynamic safe-rate 0.0% (static full 41.7% — static recommended cell 0.0%)
+  mt-MPC   dynamic safe-rate 100.0% (static full 79.2% — static recommended cell 100.0%)

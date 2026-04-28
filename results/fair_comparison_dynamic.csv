@@ -1,0 +1,13 @@
+scenario,controller,vmax,lookahead,trial,seed,outcome,steps,path_length,min_clearance,avg_speed,max_speed,time_to_goal_s,safety_violation_magnitude,qp_feasibility_rate,tts_rate,fallback_count,avg_solve_ms,max_solve_ms
+B_DYN,apf,1.0,0.4,0,42,success,508,9.2554,0.1608,0.8745,1.5078,10.583,0.0,nan,nan,0,nan,nan
+B_DYN,apf,1.0,0.4,1,43,success,513,9.4067,0.1421,0.8802,1.4275,10.688,0.0,nan,nan,0,nan,nan
+B_DYN,apf,1.0,0.4,2,44,success,511,9.264,0.1593,0.8702,1.64,10.646,0.0,nan,nan,0,nan,nan
+B_DYN,cbf,1.0,0.4,0,42,collision,443,6.8218,0.049,0.7392,1.2815,nan,0.001,0.9345,nan,0,nan,nan
+B_DYN,cbf,1.0,0.4,1,43,collision,238,4.0597,0.0472,0.8188,1.5027,nan,0.0028,0.895,nan,0,nan,nan
+B_DYN,cbf,1.0,0.4,2,44,collision,287,4.4877,0.0491,0.7506,1.1941,nan,0.0009,0.8955,nan,0,nan,nan
+B_DYN,mtmpc,1.0,0.4,0,42,success,531,6.503,0.0599,0.5878,1.1453,11.062,0.0,0.5518,0.9266,237,480.21,7219.12
+B_DYN,mtmpc,1.0,0.4,1,43,success,545,6.4575,0.0609,0.5687,1.185,11.354,0.0,0.5431,0.9266,248,593.66,5345.94
+B_DYN,mtmpc,1.0,0.4,2,44,success,500,6.3332,0.061,0.608,1.1339,10.417,0.0,0.582,0.92,208,483.43,6788.46
+B_DYN,apf,1.0,0.4,0,42,success,508,9.2554,0.1608,0.8745,1.5078,10.583,0.0,nan,nan,0,nan,nan
+B_DYN,apf,1.0,0.4,0,42,success,508,9.2554,0.1608,0.8745,1.5078,10.583,0.0,nan,nan,0,nan,nan
+B_DYN,apf,1.0,0.4,0,42,success,508,9.2554,0.1608,0.8745,1.5078,10.583,0.0,nan,nan,0,nan,nan

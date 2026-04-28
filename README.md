@@ -146,6 +146,33 @@ clearance. Full tables, the LOOKAHEAD ablation, and the implementation
 narrative are in `final_comparison_summary.md` and
 `reproducibility_journey.md`.
 
+## Dynamic Obstacle Extension (v2)
+
+A small extension adds two moving obstacles to Scenario B in the
+open-space corridors above and below the static cluster:
+
+- Lower obstacle: y=0, x(t) = 1.5 + 1.0·sin(2π·t/3), 3-second period
+- Upper obstacle: y=3, x(t) = 1.5 + 1.0·sin(2π·t/3.5 + π/2), 3.5-second period
+
+Run the dynamic sweep (9 trials, ~12 minutes):
+
+```bash
+bash run_sweep_dynamic.sh
+```
+
+Results at the recommended config (vmax=1.0, lookahead=0.40, 3 trials each):
+
+| Controller | Static | Dynamic | Delta |
+|------------|--------|---------|-------|
+| APF        | 33%    | 33%     | 0%    |
+| CBF-QP     | 0%     | 0%      | 0%    |
+| mt-MPC     | 100%   | 33%     | -67%  |
+
+The mt-MPC degradation is a negative result that exposes the
+static-obstacle assumption in the original paper's recursive
+feasibility proof. See `results/dynamic_comparison_v2.txt` and the
+final report for the full mechanism analysis.
+
 ## Troubleshooting
 
 **`ModuleNotFoundError: No module named 'gym_pybullet_drones'`**

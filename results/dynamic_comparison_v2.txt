@@ -1,0 +1,26 @@
+Per-trial outcomes — Dynamic v2 (2 moving obstacles in open space)
+----------------------------------------------------------------------
+  APF      trial 0  SUCCESS    steps= 653  clear=0.149 m  speed=0.854 m/s  path=11.62 m
+  APF      trial 1  COLLISION  steps= 392  clear=0.041 m  speed=0.843 m/s  path=6.88 m
+  APF      trial 2  TIMEOUT    steps=2501  clear=0.071 m  speed=0.843 m/s  path=43.92 m
+
+  CBF-QP   trial 0  COLLISION  steps= 189  clear=0.049 m  speed=0.890 m/s  path=3.50 m
+  CBF-QP   trial 1  COLLISION  steps= 194  clear=0.036 m  speed=0.877 m/s  path=3.54 m
+  CBF-QP   trial 2  COLLISION  steps= 255  clear=0.050 m  speed=0.838 m/s  path=4.45 m
+
+  mt-MPC   trial 0  COLLISION  steps= 201  clear=0.050 m  speed=0.852 m/s  path=3.57 m
+  mt-MPC   trial 1  TIMEOUT    steps=2501  clear=0.061 m  speed=0.089 m/s  path=4.64 m
+  mt-MPC   trial 2  SUCCESS    steps= 444  clear=0.061 m  speed=0.585 m/s  path=5.41 m
+
+
+Comparison table
+---------------------------------------------------------------------------------------------------------------------
+Controller  Static-full (24)          Static @ best (3)       Dyn v1 (3)          Dyn v2 (3)          Δsafe (full→v2)
+APF         S=10 T= 8 C= 6  75.0%   S=1 T=1 C=1  66.7%    S=6 T=0 C=0 100.0%   S=1 T=1 C=1  66.7%     -8.3%
+CBF-QP      S= 0 T=10 C=14  41.7%   S=0 T=0 C=3   0.0%    S=0 T=0 C=3   0.0%   S=0 T=0 C=3   0.0%    -41.7%
+mt-MPC      S=11 T= 8 C= 5  79.2%   S=3 T=0 C=0 100.0%    S=3 T=0 C=0 100.0%   S=1 T=1 C=1  66.7%    -12.5%
+
+Headline (success rate, success∪timeout = safe rate):
+  APF      static@best  succ  33.3%  safe  66.7%  |  dyn v2  succ  33.3%  safe  66.7%  |  Δsucc   +0.0%   Δsafe   +0.0%
+  CBF-QP   static@best  succ   0.0%  safe   0.0%  |  dyn v2  succ   0.0%  safe   0.0%  |  Δsucc   +0.0%   Δsafe   +0.0%
+  mt-MPC   static@best  succ 100.0%  safe 100.0%  |  dyn v2  succ  33.3%  safe  66.7%  |  Δsucc  -66.7%   Δsafe  -33.3%
